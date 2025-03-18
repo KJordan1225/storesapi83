@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Http\Controllers\Admin\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,13 @@ $api->version('v1', function($api) {
 
         $api->group( ['middleware' => 'auth'], function($api) {
             $api->post('/token/refresh','App\Http\Controllers\Auth\AuthController@refresh');
-            $api->post('/logout','App\Http\Controllers\Auth\AuthController@logout');
+            $api->post('/logout','App\Http\Controllers\Auth\AuthController@logout'); 
         });
     });
 
     $api->group(['middleware' => ['role:super-admin'], 'prefix' => 'admin' ],
         function ($api) {
-            $api->get('users', 'App\Http\Controllers\Admin\AdminUserController@index');
+            $api->resource('users', AdminUserController::class);
         }
     );
 

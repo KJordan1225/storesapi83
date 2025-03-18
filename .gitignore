@@ -1,8 +1,10 @@
-/node_modules
-/public/hot
-/public/storage
+/vendor/
+/node_modules/
+
+# Laravel 5 & up specific
+/bootstrap/cache/
 /storage/*.key
-/vendor
+/vendor/
 .env
 .env.backup
 .phpunit.result.cache
@@ -10,3 +12,57 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# Laravel local development configuration files
+/.idea
+/.vscode
+/_ide_helper.php
+/_ide_helper_models.php
+/.phpstorm.meta.php
+
+# User-specific files
+.DS_Store
+Thumbs.db
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
+.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# SASS
+.sass-cache/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime
+*.sublime-workspace
+
+# Logs
+*.log
+*.sql
+*.sqlite
+
+# PHPUnit
+.phpunit.result.cache
+
+# User-specific ignores
+/.vagrant/
+Homestead.yaml
+Homestead.json
+/.env
+/.env.backup
+.phpunit.result.cache
+/public/storage
+/storage/*.key
+/storage/framework/
+/storage/logs/
+/bootstrap/cache/

@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserProfileRequest;
-use App\Http\Requests\UpdateUserProfileRequest;
-use App\Models\UserProfile;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
-use League\Fractal\Resource\Item;
 use App\Transformers\UserTransformer;
 use League\Fractal\Resource\Collection;
-use JWTAuth;
-use Validator;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Response;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Models\UserProfile;
+
 
 class UserProfileController extends Controller
 {
