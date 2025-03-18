@@ -42,4 +42,13 @@ $api->version('v1', function($api) {
             $api->get('users', 'App\Http\Controllers\Admin\AdminUserController@index');
         }
     );
+
+    $api->group( ['prefix' => 'me', 'middleware' => 'auth' ],
+        function ($api) {
+            $api->get ('/profile', 'App\Http\Controllers\UserProfileController@index');
+            $api->post('/profile', 'App\Http\Controllers\UserProfileController@store');
+            $api->put('/profile', 'App\Http\Controllers\UserProfileController@update');
+            $api->delete('/profile', 'App\Http\Controllers\UserProfileController@destroy');
+        }
+    );
 });

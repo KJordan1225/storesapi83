@@ -68,6 +68,8 @@ class UserController extends Controller
             'password' => $request->password,
         ]);
 
+        $user->assignRole('customer');
+
         try {
             $token = auth()->login($user);
         } catch (JWTException $e) {

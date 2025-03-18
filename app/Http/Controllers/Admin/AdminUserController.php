@@ -11,8 +11,6 @@ use League\Fractal\Resource\Item;
 use App\Transformers\UserTransformer;
 use League\Fractal\Resource\Collection;
 
-
-
 class AdminUserController extends Controller
 {
     /**
