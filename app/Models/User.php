@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\UserProfile;
+use App\Models\Store;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -65,5 +66,9 @@ class User extends Authenticatable implements JWTSubject
     {
        return $this->hasOne(UserProfile::class);
     }
-    
+
+    public function stores ()
+    {
+        return $this->hasMany (Store::class, 'owner_id' );
+    }    
 }
